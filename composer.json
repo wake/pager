@@ -1,6 +1,6 @@
 {
   "name": "wake/pager",
-  "description": "A lightweight PHP paginator for ORMs",
+  "description": "A lightweight PHP paginator.",
   "version": "v0.0.0",
   "type": "library",
   "keywords": ["pagination", "paginator", "orm"],
