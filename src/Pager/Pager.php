@@ -325,8 +325,8 @@
       }
 
       return [
-        'pageFirst'   => $pageFirst,
-        'pageLast'    => $pageLast,
+        'pageFirst' => $pageFirst,
+        'pageLast'  => $pageLast,
         ];
     }
 
