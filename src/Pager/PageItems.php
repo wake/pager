@@ -193,7 +193,7 @@
 
         $operate = $operate . 'N';
 
-        return $this->$operate (substr ($name, 4, 1));
+        return $this->$operate (substr ($name, 4));
       }
     }
 
