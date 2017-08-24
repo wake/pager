@@ -27,7 +27,6 @@ then run `composer install` or `composer update`.
 Use Pager without any ORM.
 
 ```php
-
 Use Pager\Pager;
 
 $pager = new Pager ();
@@ -60,7 +59,7 @@ foreach ($pager->pages as $page)
 
 ### `$pager->show ($show)`
 
-Set amount of item displayed per page, default `15`.
+Set amount of items per page, default to `15`.
 
 ```php
 // Display 12 items on each page.
@@ -69,7 +68,7 @@ $pager->show (12);
 
 ### `$pager->total ($total)`
 
-Set item total amount.
+Set total amount of items.
 
 ```php
 // Set total amount of 100.
@@ -78,31 +77,31 @@ $pager->total (100);
 
 ### `$pager->size ($size)`
 
-Set amount of page list per page, default `10`.
+Set amount of page list per page, default to `10`.
 
 ```php
-// Display 5 page items on each page - `1 2 3 4 5`
+// Display 5 pages of page group on each page - `1 2 3 4 5`
 $pager->size (5);
 ```
 
 ### `$pager->page ($page)`
 
-Set current page, default `1`.
+Set current page, default to `1`.
 
 ```php
-// Set current page of No.3
+// Set current to page 3
 $pager->page (3);
 ```
 
 ### `$pager->dynamic ()`, `$pager->fixed ()`
 
-List page group dynamically or fixed, default is `dynamic`.
+List pages of page froup dynamically or fixed, default is `dynamic`.
 
 ```php
-// Set page items list dynamically: `1 2 3 4 5` -> `2 3 4 5 6` -> `3 4 5 6 7`
+// List dynamically: `1 2 3 4 5` -> `2 3 4 5 6` -> `3 4 5 6 7`
 $pager->dynamic ();
 
-// Set page items list fixed: `1 2 3 4 5` -> `6 7 8 9 10`
+// List fixed: `1 2 3 4 5` -> `6 7 8 9 10`
 $pager->fixed ();
 ```
 
@@ -126,6 +125,113 @@ Calculate and build page items, must be called after all options are set.
 
 ```php
 $pager->paging ();
+```
+
+## Usage: Pages
+
+Container of page items.
+
+```php
+Use Pager\Pager;
+
+$pager = new Pager ();
+
+$pager->total (1000) // 1000 data items
+  ->page (13)        // current page is no.13
+  ->paging ();
+
+$pages = $pager->pages;
+```
+
+### `$pages->top`
+
+First page of all pages, generally is 1.
+
+### `$pages->end`
+
+Last page of all pages, generally is 1.
+
+### `$pages->first`
+
+First page of page group.
+
+### `$pages->last`
+
+First page of page group.
+
+### `$pages->total`
+
+Total amount of pages.
+
+### `$pages->current` `$pages->page`
+
+Current page.
+
+### `$pages->next`
+
+Next page.
+
+### `$pages->prev`
+
+Previous page.
+
+### `$pages->next*N`
+
+Next `N` page.
+
+```php
+// Next page
+$pages->next;
+$pages->next1;
+
+// Next 5 page
+$pages->next5;
+```
+
+### `$pages->prev*N`
+
+Previous `N` page.
+
+```php
+// Previous page
+$pages->prev;
+$pages->prev1;
+
+// Previous 5 page
+$pages->prev5;
+```
+
+## Usage: Page item
+
+Page item.
+
+```php
+Use Pager\Pager;
+
+$pager = new Pager ();
+
+$pager->total (1000) // 1000 data items
+  ->page (13)        // current page is no.13
+  ->paging ();
+
+$item = $pager->pages->first;
+```
+
+### `$item`, `$item->num`
+
+Number of the page, $item could be use as string directly.
+
+```php
+echo $item;
+echo $item->num;
+```
+
+### `$item->url ()`
+
+Url of the page.
+
+```php
+echo $item->url ();
 ```
 
 ## Feedback
