@@ -1,2 +1,3 @@
-# pager
-A lightweight PHP paginator for ORMs
+# Pager
+
+A lightweight PHP paginator for ORMs.
