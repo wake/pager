@@ -103,6 +103,14 @@
         case 'page':
           return $this->pages->current;
           break;
+
+        case 'dynamic':
+          return $this->pages->dynamic;
+          break;
+
+        case 'fixed':
+          return $this->pages->fixed;
+          break;
       }
     }
 
@@ -132,6 +140,14 @@
 
         case 'page':
           return $this->page ($value);
+          break;
+
+        case 'dynamic':
+          return $this->dynamic ($value);
+          break;
+
+        case 'fixed':
+          return $this->fixed ($value);
           break;
       }
 
@@ -179,6 +195,28 @@
      */
     public function page ($page) {
       $this->setting['page']['current'] = $page;
+      return $this;
+    }
+
+
+    /**
+     *
+     * Set page items displayed dynamically or fixed
+     *
+     */
+    public function dynamic ($dynamic = true) {
+      $this->setting['page']['dynamic'] = $dynamic === true;
+      return $this;
+    }
+
+
+    /**
+     *
+     * Set page items displayed dynamically or fixed
+     *
+     */
+    public function fixed ($fixed = true) {
+      $this->setting['page']['dynamic'] = $fixed !== true;
       return $this;
     }
 
@@ -287,8 +325,8 @@
       }
 
       return [
-        'pageFirst'   => $pageFirst,
-        'pageLast'    => $pageLast,
+        'pageFirst' => $pageFirst,
+        'pageLast'  => $pageLast,
         ];
     }
 
