@@ -41,10 +41,10 @@ echo $pager->pages->top;
 // last page (total pages): 67
 echo $pager->pages->end;
 
-// first page of displayed pages: 8
+// first page of page group: 8
 echo $page->pages->first;
 
-// last page of displayed pages: 17
+// last page of page group: 17
 echo $page->pages->last;
 
 // pages
@@ -95,7 +95,7 @@ $pager->page (3);
 
 ### `$pager->dynamic ()`, `$pager->fixed ()`
 
-List pages of page froup dynamically or fixed, default is `dynamic`.
+List pages of page group dynamically or fixed, default is `dynamic`.
 
 ```php
 // List dynamically: `1 2 3 4 5` -> `2 3 4 5 6` -> `3 4 5 6 7`
@@ -107,7 +107,7 @@ $pager->fixed ();
 
 ### `$pager->url ($pattern)`
 
-Set url pattern or handling function, default is pattern `(:num)`.
+Set url pattern or handler function, default is pattern `(:num)`.
 
 ```php
 // /?page=3
@@ -149,7 +149,7 @@ First page of all pages, generally is 1.
 
 ### `$pages->end`
 
-Last page of all pages, generally is 1.
+Last page of all pages.
 
 ### `$pages->first`
 
@@ -163,7 +163,7 @@ First page of page group.
 
 Total amount of pages.
 
-### `$pages->current` `$pages->page`
+### `$pages->current`, `$pages->page`
 
 Current page.
 
