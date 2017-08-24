@@ -1,0 +1,28 @@
+{
+  "name": "forgez/helper-pager",
+  "description": "A lightweight PHP paginator for ORMs",
+  "version": "v0.0.0",
+  "type": "library",
+  "keywords": ["pagination", "paginator", "orm"],
+  "homepage": "https://github.com/Forgez/Helper-Pager",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Wake Liu",
+      "email": "wake.gs@gmail.com",
+      "homepage": "http://wake.gs"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/Forgez/Helper-Pager/issues",
+    "source": "https://github.com/Forgez/Helper-Pager"
+  },
+  "require": {
+    "php": ">=5.2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pager": "src/Pager"
+    }
+  }
+}
