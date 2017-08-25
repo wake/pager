@@ -32,26 +32,32 @@ Use Pager\Pager;
 $pager = new Pager ();
 
 $pager->total (1000) // 1000 data items
-  ->page (13)        // current page is no.13
+  ->page (13)        // Set current page to no.13
   ->paging ();
 
-// first page: 1
+// First page: 1
 echo $pager->pages->top;
 
-// last page (total pages): 67
+// Last page (total pages): 67
 echo $pager->pages->end;
 
-// first page of page group: 8
+// First page of page group: 8
 echo $page->pages->first;
 
-// last page of page group: 17
+// Last page of page group: 17
 echo $page->pages->last;
 
-// pages
+// Next page: 14
+echo $page->pages->next;
+
+// Next 10 page: 24
+echo $page->pages->next10;
+
+// Pages
 foreach ($pager->pages as $page)
   echo $page . "<br />";
 
-// page url
+// Page url
 foreach ($pager->pages as $page)
   echo $page->url . "<br />";
 
@@ -157,7 +163,7 @@ First page of page group.
 
 ### `$pages->last`
 
-First page of page group.
+Last page of page group.
 
 ### `$pages->total`
 
