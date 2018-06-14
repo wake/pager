@@ -52,6 +52,9 @@
 
         // function
         'func' => null,
+
+        // url string
+        'string' => null,
       ],
     ];
 
@@ -230,18 +233,18 @@
 
       if (is_string ($para)) {
         $this->setting['url']['type'] = 'pattern';
-        $this->setting['url']['pattern'] = $para;
+        $this->setting['url']['string'] = $para;
       }
 
       else if (is_callable ($para)) {
         $this->setting['url']['type'] = 'func';
-        $this->setting['url']['pattern'] = $para;
+        $this->setting['url']['func'] = $para;
       }
 
       else if (is_object ($para) && get_class ($para) == 'Pager\PageItem' || is_subclass_of ($para, 'Pager\PageItem')) {
 
         if ($this->setting['url']['type'] == 'pattern')
-          return str_replace ('(:num)', $para->num, $this->setting['url']['pattern']);
+          return str_replace ([$this->setting['url']['pattern'], rawurlencode ($this->setting['url']['pattern'])], $para->num, $this->setting['url']['string']);
 
         else if ($this->setting['url']['type'] == 'func') {
           $func = $this->setting['url']['func'];
