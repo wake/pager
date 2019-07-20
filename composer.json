@@ -1,7 +1,6 @@
 {
   "name": "wake/pager",
   "description": "A lightweight PHP paginator.",
-  "version": "v0.1.1",
   "type": "library",
   "keywords": ["pagination", "paginator", "orm"],
   "homepage": "https://github.com/wake/pager",
