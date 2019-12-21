@@ -185,6 +185,18 @@
             return new PageItem ($this->pager, $this->_current);
 
           return $this->data['items'][$this->cpos];
+
+        case 'isTop':
+          return $this->_current == $this->_top;
+
+        case 'isEnd':
+          return $this->_current == $this->_end;
+
+        case 'isFirst':
+          return $this->_current == $this->_first;
+
+        case 'isLast':
+          return $this->_current == $this->_last;
       }
 
       $operate = substr ($name, 0, 4);
