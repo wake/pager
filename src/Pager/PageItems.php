@@ -335,6 +335,9 @@
       if (in_array ($offset, ['top', 'end', 'first', 'last', 'prev', 'next', 'current']))
         return true;
 
+      else if (in_array ($offset, ['isTop', 'isEnd', 'isFirst', 'isLast']))
+        return true;
+
       else if (in_array (substr ($offset, 0, 4), ['page', 'next', 'prev']))
         return true;
 
@@ -350,6 +353,9 @@
     public function offsetGet ($offset) {
 
       if (in_array ($offset, ['top', 'end', 'first', 'last', 'prev', 'next', 'current']))
+        return $this->$offset;
+
+      else if (in_array ($offset, ['isTop', 'isEnd', 'isFirst', 'isLast']))
         return $this->$offset;
 
       else if (in_array (substr ($offset, 0, 4), ['page', 'next', 'prev']))
