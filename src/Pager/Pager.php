@@ -82,6 +82,20 @@
 
     /**
      *
+     * Isset
+     *
+     */
+    public function __isset ($name) {
+
+      if (in_array ($name, ['show', 'total', 'size', 'page', 'dynamic', 'fixed']))
+        return true;
+
+      return isset ($this->$name);
+    }
+
+
+    /**
+     *
      * Short access
      *
      */
