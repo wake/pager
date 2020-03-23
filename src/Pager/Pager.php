@@ -42,6 +42,12 @@
         'dynamic' => true,
       ],
 
+      'query' => [
+
+        // offset - Offset size of query
+        'offset' => 0,
+      ],
+
       'url' => [
 
         // type of generator
@@ -87,7 +93,7 @@
      */
     public function __isset ($name) {
 
-      if (in_array ($name, ['show', 'total', 'size', 'page', 'dynamic', 'fixed']))
+      if (in_array ($name, ['show', 'total', 'size', 'page', 'dynamic', 'fixed', 'offset']))
         return true;
 
       return isset ($this->$name);
@@ -128,6 +134,10 @@
         case 'fixed':
           return $this->pages->fixed;
           break;
+
+        case 'offset':
+          return $this->setting['query']['offset'];
+          break;
       }
     }
 
@@ -165,6 +175,10 @@
 
         case 'fixed':
           return $this->fixed ($value);
+          break;
+
+        case 'offset':
+          return $this->offset ($value);
           break;
       }
 
@@ -234,6 +248,17 @@
      */
     public function fixed ($fixed = true) {
       $this->setting['page']['dynamic'] = $fixed !== true;
+      return $this;
+    }
+
+
+    /**
+     *
+     * Set query offset
+     *
+     */
+    public function offset ($offset = 0) {
+      $this->setting['query']['offset'] = $offset;
       return $this;
     }
 

@@ -139,10 +139,11 @@
 
         $page = $this->pages->current->num;
         $show = $this->setting['item']['show'];
+        $offset = $this->setting['query']['offset'];
 
         // Split data
         $this->orm = $this->orm
-          ->offset (($page - 1) * $show)
+          ->offset ((($page - 1) * $show) + $offset)
           ->limit ($show);
 
         return call_user_func_array ([$this->orm, $func], $args);
