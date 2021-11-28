@@ -122,6 +122,11 @@
      */
     public function __call ($func, $args) {
 
+      $call = $this->__call ($func, $args);
+
+      if (! is_null ($call))
+        return $call;
+
       if (function_exists ($this, $func))
         return call_user_func_array ([$this, $func], $args);
 
