@@ -150,4 +150,23 @@
 
       return $this;
     }
+
+
+    /**
+     *
+     * Rows
+     *
+     */
+    public function rows ($page) {
+
+      $limit = $this->_setting['item']['limit'];
+      $offset = $this->_setting['item']['offset'];
+
+      // Split data
+      $this->orm = $this->orm
+        ->offset ((($page - 1) * $limit) + $offset)
+        ->limit ($limit);
+
+      return $this->orm->find_array ();
+    }
   }
