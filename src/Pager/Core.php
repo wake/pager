@@ -83,6 +83,25 @@
 
     /**
      *
+     * Interception functions for ORM class
+     *
+     */
+    public function __call ($name, $args) {
+
+      if (isset ($this->$name)) {
+
+        $item = $this->$name;
+
+        if (is_callable ($item))
+          return call_user_func_array ($item, $args);
+      }
+
+      return null;
+    }
+
+
+    /**
+     *
      * Count
      *
      */
