@@ -62,7 +62,7 @@
      *
      */
     public function __invoke () {
-      return strval (! is_null ($this->num) ? $this->num : '');
+      return ! is_null ($this->num) ? intval ($this->num) : $this->num;
     }
 
 
