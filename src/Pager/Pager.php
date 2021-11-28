@@ -58,6 +58,6 @@
       $limit = $this->limit;
       $offset = ($page - 1) * $limit;
 
-      return array_slice ($this->data, $offset, $length);
+      return array_slice ($this->data, $offset, $limit);
     }
   }
