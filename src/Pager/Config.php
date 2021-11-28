@@ -26,8 +26,8 @@
         // show - How many items list per page
         'limit' => 15,
 
-        // total - Amount of items
-        '_total' => null,
+        // amount - Amount of items
+        'amount' => null,
       ],
 
       'page' => [
@@ -75,7 +75,7 @@
      */
     public function __isset ($name) {
 
-      if (in_array ($name, ['offset', 'limit', 'size', 'dynamic', 'fixed']))
+      if (in_array ($name, ['offset', 'limit', 'amount', 'size', 'dynamic', 'fixed']))
         return true;
 
       $vars = array_keys (get_class_vars (static::class));
@@ -100,6 +100,10 @@
 
         case 'limit':
           return $this->_setting['row']['limit'];
+          break;
+
+        case 'amount':
+          return $this->_setting['row']['amount'];
           break;
 
         // Ref to page setting
@@ -138,6 +142,8 @@
           return $this->limit ($value);
           break;
 
+        // Not allow setting amount of row
+
         // Ref to page setting
         case 'size':
           return $this->size ($value);
@@ -174,6 +180,17 @@
      */
     public function limit ($limit) {
       $this->_setting['row']['limit'] = $limit < 1 ? 1 : $limit;
+      return $this;
+    }
+
+
+    /**
+     *
+     * Set row amount (not public)
+     *
+     */
+    protected function amount ($amount) {
+      $this->_setting['row']['amount'] = $amount < 1 ? 1 : $amount;
       return $this;
     }
 
