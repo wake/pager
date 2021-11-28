@@ -14,7 +14,7 @@
 
     /**
      *
-     * Get total amount of items
+     * Get total amount of rows
      *
      */
     public function count ();

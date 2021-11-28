@@ -18,9 +18,9 @@
      */
     protected $_setting = [
 
-      'item' => [
+      'row' => [
 
-        // offset - The offset of the first item in collection
+        // offset - The offset of the first row in collection
         'offset' => 0,
 
         // show - How many items list per page
@@ -93,13 +93,13 @@
 
       switch ($name) {
 
-        // Ref to item setting
+        // Ref to row setting
         case 'offset':
-          return $this->_setting['item']['offset'];
+          return $this->_setting['row']['offset'];
           break;
 
         case 'limit':
-          return $this->_setting['item']['limit'];
+          return $this->_setting['row']['limit'];
           break;
 
         // Ref to page setting
@@ -129,7 +129,7 @@
 
       switch ($name) {
 
-        // Ref to item settings
+        // Ref to row settings
         case 'offset':
           return $this->offset ($value);
           break;
@@ -158,22 +158,22 @@
 
     /**
      *
-     * Set item offset
+     * Set row offset
      *
      */
     public function offset ($offset = 0) {
-      $this->_setting['item']['offset'] = $offset < 0 ? 0 : $offset;
+      $this->_setting['row']['offset'] = $offset < 0 ? 0 : $offset;
       return $this;
     }
 
 
     /**
      *
-     * Set item limit
+     * Set row limit
      *
      */
     public function limit ($limit) {
-      $this->_setting['item']['limit'] = $limit < 1 ? 1 : $limit;
+      $this->_setting['row']['limit'] = $limit < 1 ? 1 : $limit;
       return $this;
     }
 

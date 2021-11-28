@@ -140,8 +140,8 @@
         $this->paging ();
 
         $page = $this->current->num;
-        $limit = $this->_setting['item']['limit'];
-        $offset = $this->_setting['item']['offset'];
+        $limit = $this->_setting['row']['limit'];
+        $offset = $this->_setting['row']['offset'];
 
         // Split data
         $this->orm = $this->orm
@@ -164,8 +164,8 @@
      */
     public function rows ($page) {
 
-      $limit = $this->_setting['item']['limit'];
-      $offset = $this->_setting['item']['offset'];
+      $limit = $this->_setting['row']['limit'];
+      $offset = $this->_setting['row']['offset'];
 
       // Split data
       $this->orm = $this->orm

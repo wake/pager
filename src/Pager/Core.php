@@ -127,11 +127,11 @@
      */
     public function paging () {
 
-      $itemTotal = $this->count ();
-      $itemLimit = $this->_setting['item']['limit'];
+      $rowTotal = $this->count ();
+      $rowLimit = $this->_setting['row']['limit'];
       $pageCurrent = $this->_setting['page']['_current'];
 
-      $pageTotal = ceil ($itemTotal / $itemLimit);
+      $pageTotal = ceil ($rowTotal / $rowLimit);
       $pageCurrent = min (max ($pageCurrent, 1), $pageTotal);
 
       // Count with page size
