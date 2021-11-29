@@ -167,6 +167,14 @@
      *
      */
     public function rows () {
-      return $this->adapter->rows ($this->num);
+
+      $num = $this->num;
+
+      $limit = $this->adapter->limit;
+      $offset = $this->adapter->offset;
+
+      $offset = ($num - 1) * $limit + $offset;
+
+      return $this->adapter->slice ($offset, $limit);
     }
   }
