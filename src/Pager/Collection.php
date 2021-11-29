@@ -104,13 +104,13 @@
 
       switch ($name) {
 
-        // Only three kinds of page info need to store
-        case 'total':
-          $name = 'end';
-
         case 'page':
         case 'current':
-          $name = 'current';
+          $p = $this->page['current'];
+          break;
+
+        case 'total':
+          $name = 'end';
 
         case 'top':
         case 'end':
