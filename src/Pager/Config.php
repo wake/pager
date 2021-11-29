@@ -197,7 +197,7 @@
 
     /**
      *
-     * Set page size
+     * Set page group size
      *
      */
     public function size ($size) {
@@ -219,7 +219,7 @@
 
     /**
      *
-     * Set page items displayed dynamically or fixed
+     * Set page items in group displayed dynamical or fixed
      *
      */
     public function dynamic ($dynamic = true) {
@@ -230,7 +230,7 @@
 
     /**
      *
-     * Set page items displayed dynamically or fixed
+     * Set page items in group displayed dynamical or fixed
      *
      */
     public function fixed ($fixed = true) {
