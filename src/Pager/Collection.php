@@ -21,14 +21,6 @@
 
     /**
      *
-     * Had built
-     *
-     */
-    protected $built = false;
-
-
-    /**
-     *
      * Page cache
      *
      */
