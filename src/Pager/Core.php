@@ -115,7 +115,7 @@
      * Rows
      *
      */
-    public function rows ($page) {
+    public function slice ($offset, $limit) {
       return [];
     }
 

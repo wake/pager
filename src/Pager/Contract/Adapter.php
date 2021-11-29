@@ -22,8 +22,8 @@
 
     /**
      *
-     * Count rows of current page
+     * Slice data rows
      *
      */
-    public function rows (Int $page);
+    public function slice (Int $offset, Int $limit);
   }
