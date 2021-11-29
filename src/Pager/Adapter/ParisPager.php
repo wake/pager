@@ -117,6 +117,21 @@
 
     /**
      *
+     * Slice data
+     *
+     */
+    public function slice ($offset, $limit) {
+
+      // Split data
+      return $this->orm = $this->orm
+        ->offset ($offset)
+        ->limit ($limit)
+        ->find_array ();
+    }
+
+
+    /**
+     *
      * Interception functions for ORM class
      *
      */
@@ -154,24 +169,5 @@
       $this->orm = call_user_func_array ([$this->orm, $func], $args);
 
       return $this;
-    }
-
-
-    /**
-     *
-     * Rows
-     *
-     */
-    public function rows ($page) {
-
-      $limit = $this->_setting['row']['limit'];
-      $offset = $this->_setting['row']['offset'];
-
-      // Split data
-      $this->orm = $this->orm
-        ->offset ((($page - 1) * $limit) + $offset)
-        ->limit ($limit);
-
-      return $this->orm->find_array ();
     }
   }

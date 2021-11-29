@@ -42,14 +42,10 @@
 
     /**
      *
-     * Rows
+     * Slice data
      *
      */
-    function rows ($page) {
-
-      $limit = $this->limit;
-      $offset = ($page - 1) * $limit;
-
+    public function slice ($offset, $limit) {
       return array_slice ($this->data, $offset, $limit);
     }
   }
