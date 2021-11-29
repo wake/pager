@@ -288,11 +288,6 @@
       return isset ($this->page['group'][$this->page['pos']]);
     }
 
-    // ArrayAccess: offsetSet
-    public function offsetSet ($offset, $value) {
-      // Can't set
-    }
-
     // ArrayAccess: offsetExists
     public function offsetExists ($offset) {
 
@@ -306,6 +301,11 @@
         return true;
 
       return isset ($this->page['group'][$offset]);
+    }
+
+    // ArrayAccess: offsetSet
+    public function offsetSet ($offset, $value) {
+      // Can't set
     }
 
     // ArrayAccess: offsetUnset
