@@ -46,7 +46,7 @@
      * Construct
      *
      */
-    function __construct ($adapter, $page = []) {
+    public function __construct ($adapter, $page = []) {
       $this->adapter = $adapter;
       $this->paging ($page);
       return $this;
@@ -178,7 +178,7 @@
      * Set paging
      *
      */
-    function paging ($page) {
+    public function paging ($page) {
 
       foreach ($this->page as $k => $v) {
         $this->page[$k] = isset ($page[$k]) ? $page[$k] : $v;
@@ -193,7 +193,7 @@
      * Reset
      *
      */
-    function reset () {
+    public function reset () {
 
       $this->page = [
         'pos'     => 0,

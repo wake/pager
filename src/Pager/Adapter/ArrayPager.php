@@ -24,7 +24,7 @@
      * Construct
      *
      */
-    function __construct ($data = []) {
+    public function __construct ($data = []) {
       $this->data = $data;
       return parent::__construct ();
     }
@@ -32,10 +32,10 @@
 
     /**
      *
-     * Count
+     * Count data
      *
      */
-    function count () {
+    public function count () {
       return count ($this->data);
     }
 

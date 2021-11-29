@@ -44,7 +44,7 @@
      * Construct
      *
      */
-    function __construct ($orm = null) {
+    public function __construct ($orm = null) {
 
       parent::__construct ();
       $this->orm = $orm;
@@ -58,7 +58,7 @@
      * Make Pager as `Paris Model` wrapper
      *
      */
-    static function factory ($table) {
+    public static function factory ($table) {
 
       $pager = new ParisPager (Model::factory ($table));
       $pager->odata['table'] = $table;
@@ -69,10 +69,10 @@
 
     /**
      *
-     * Count item amount
+     * Count data amount
      *
      */
-    function count ($handler = null) {
+    public function count ($handler = null) {
 
       // Assign count handler (query or function)
       if (! is_null ($handler)) {
