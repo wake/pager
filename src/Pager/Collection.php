@@ -114,6 +114,7 @@
 
         case 'top':
         case 'end':
+        case 'group':
           $p = $this->page[$name];
           break;
 
