@@ -60,7 +60,7 @@
      */
     public function __isset ($name) {
 
-      if (in_array ($name, ['total', 'page', 'current'
+      if (in_array ($name, ['total', 'page', 'current', 'group'
         , 'top', 'end', 'first', 'last', 'prev', 'next'
         , 'isTop', 'isEnd', 'isFirst', 'isLast']))
         return true;
@@ -83,7 +83,7 @@
      */
     public function __call ($name, $args = []) {
 
-      if (! in_array ($name, ['total', 'page', 'current'
+      if (! in_array ($name, ['total', 'page', 'current', 'group'
         , 'top', 'end', 'first', 'last', 'prev', 'next']))
         return false;
 
