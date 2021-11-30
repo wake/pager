@@ -114,7 +114,6 @@
 
         case 'top':
         case 'end':
-        case 'group':
           $p = $this->page[$name];
           break;
 
@@ -137,6 +136,9 @@
         case 'next1':
           $p = min ($this->page['current'] + 1, $this->page['end']);
           break;
+
+        case 'group':
+          return $this->page['group'];
 
         case 'isTop':
           return $this->page['current'] == $this->page['top'];
