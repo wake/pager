@@ -81,6 +81,16 @@
      * Isset
      *
      */
+    public function __invoke () {
+      return $this->page['group'];
+    }
+
+
+    /**
+     *
+     * Isset
+     *
+     */
     public function __call ($name, $args = []) {
 
       if (! in_array ($name, ['total', 'page', 'current', 'group'
