@@ -137,6 +137,9 @@
      */
     public function __call ($func, $args) {
 
+      if (isset ($this->$func) && is_callable ($call = $this->$func))
+        return call_user_func_array ($call, $args);
+
       // 優先確認是否呼叫 pager 自身相關函式
       if (method_exists ($this, $func))
         return call_user_func_array ([$this, $func], $args);
