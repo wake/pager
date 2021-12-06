@@ -29,7 +29,7 @@
     protected $odata = [
 
       // Count handler
-      'count' => null
+      'count' => null,
 
       // ORM table
       'table' => null,
