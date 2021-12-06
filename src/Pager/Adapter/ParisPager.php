@@ -137,8 +137,6 @@
      */
     public function __call ($func, $args) {
 
-      $call = $this->__call ($func, $args);
-
       if (! is_null ($call))
         return $call;
 
