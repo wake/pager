@@ -138,7 +138,7 @@
     public function __call ($func, $args) {
 
       // 優先確認是否呼叫 pager 自身相關函式
-      if (function_exists ($this, $func))
+      if (method_exists ($this, $func))
         return call_user_func_array ([$this, $func], $args);
 
       // 是否呼叫 paris 的 find_many / find_array
