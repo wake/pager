@@ -343,7 +343,7 @@
      */
     public function pagingDynamic ($itemShow, $totalItems, $totalPages, $pageCurrent, $pageSize) {
 
-      $pageCurrentBefore = ceil ($pageSize / 2);
+      $pageCurrentBefore = floor ($pageSize / 2);
       $pageCurrentAfter = $pageSize - $pageCurrentBefore - 1;
       $pageOffset = 0;
 
