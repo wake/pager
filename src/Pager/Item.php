@@ -168,7 +168,8 @@
      */
     public function rows () {
 
-      $num = $this->num;
+      if (is_null ($num = $this->num))
+        return null;
 
       $limit = $this->adapter->limit;
       $offset = $this->adapter->offset;
