@@ -146,7 +146,7 @@
         $paging = $this->fixedPaging ($pageTotal, $pageCurrent, $pageSize);
 
       $this->pages->reset ()->paging ([
-        'top'     => 1,
+        'top'     => min ($pageTotal, 1),
         'end'     => $pageTotal,
         'current' => $pageCurrent,
         'group'   => range ($paging['first'], $paging['last']),
