@@ -119,9 +119,6 @@
           $p = $this->page['current'];
           break;
 
-        case 'total':
-          $name = 'end';
-
         case 'top':
         case 'end':
           $p = $this->page[$name];
@@ -146,6 +143,9 @@
         case 'next1':
           $p = min ($this->page['current'] + 1, $this->page['end']);
           break;
+
+        case 'total':
+          return $this->page['end'];
 
         case 'group':
           return $this->page['group'];
