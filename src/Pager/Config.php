@@ -274,6 +274,9 @@
       else if (is_object ($para) && isset ($para->num))
         $p = $para->num;
 
+      else if (is_null ($para))
+        return null;
+
       if ($p !== false) {
 
         if ($this->_setting['url']['type'] == 'pattern') {
