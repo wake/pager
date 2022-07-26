@@ -179,7 +179,7 @@
           return $this->cache[$p];
 
         if ($p >= $this->page['top'] && $p <= $this->page['end'])
-          return $this->cache[$p] = new Item ($this->adapter, $p);
+          return $this->cache[$p] = new Item ($this->adapter, $p > 0 ? $p : null);
       }
 
       return null;
