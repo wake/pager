@@ -173,7 +173,8 @@
       $limit = $this->adapter->limit;
       $offset = $this->adapter->offset;
 
-      $offset = ($num - 1) * $limit + $offset;
+      // Offset will less than 0 if no data exists
+      $offset = max (($num - 1) * $limit + $offset, 0);
 
       return $this->adapter->slice ($offset, $limit);
     }
