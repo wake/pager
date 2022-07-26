@@ -190,7 +190,7 @@
      *
      */
     protected function amount ($amount) {
-      $this->_setting['row']['amount'] = $amount < 1 ? 1 : $amount;
+      $this->_setting['row']['amount'] = $amount < 0 ? 0 : $amount;
       return $this;
     }
 
