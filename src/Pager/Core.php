@@ -163,6 +163,9 @@
      */
     public function dynamicPaging ($pageTotal, $pageCurrent, $pageSize) {
 
+      if ($pageTotal == 0)
+        return ['first' => 0, 'last' => 0];
+
       $pageCurrentBefore = ceil ($pageSize / 2);
       $pageCurrentAfter = $pageSize - $pageCurrentBefore - 1;
       $pageOffset = 0;
@@ -199,6 +202,9 @@
      *
      */
     public function fixedPaging ($pageTotal, $pageCurrent, $pageSize) {
+
+      if ($pageTotal == 0)
+        return ['first' => 0, 'last' => 0];
 
       $pageGroupNo = ceil ($pageCurrent / $pageSize) - 1;
 
