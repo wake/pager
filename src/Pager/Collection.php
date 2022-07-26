@@ -136,7 +136,7 @@
 
         case 'prev':
         case 'prev1':
-          $p = max ($this->page['current'] - 1, 1);
+          $p = max ($this->page['current'] - 1, $this->page['top']);
           break;
 
         case 'next':
