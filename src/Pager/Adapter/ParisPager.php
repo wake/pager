@@ -160,7 +160,7 @@
 
         // Split data
         $this->orm = $this->orm
-          ->offset ((min ($page - 1, 0) * $limit) + $offset)
+          ->offset ((max ($page - 1, 0) * $limit) + $offset)
           ->limit ($limit);
 
         return call_user_func_array ([$this->orm, $func], $args);
