@@ -300,7 +300,7 @@
 
 
     // Iterator: rewind
-    public function rewind () {
+    public function rewind (): void {
       $this->pos = 0;
     }
 
