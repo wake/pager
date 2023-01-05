@@ -325,7 +325,7 @@
     }
 
     // ArrayAccess: offsetSet
-    public function offsetSet ($offset, $value) {
+    public function offsetSet ($offset, $value): void {
       // Can't set
     }
 
