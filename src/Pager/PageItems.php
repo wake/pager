@@ -330,7 +330,7 @@
     }
 
     // ArrayAccess: offsetExists
-    public function offsetExists ($offset) {
+    public function offsetExists ($offset): bool {
 
       if (in_array ($offset, ['top', 'end', 'first', 'last', 'prev', 'next', 'current']))
         return true;
