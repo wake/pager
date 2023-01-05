@@ -350,7 +350,7 @@
     }
 
     // ArrayAccess: offsetGet
-    public function offsetGet ($offset) {
+    public function offsetGet ($offset): mixed {
 
       if (in_array ($offset, ['top', 'end', 'first', 'last', 'prev', 'next', 'current']))
         return $this->$offset;
