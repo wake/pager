@@ -345,7 +345,7 @@
     }
 
     // ArrayAccess: offsetUnset
-    public function offsetUnset ($offset) {
+    public function offsetUnset ($offset): void {
       // Can't unset
     }
 
