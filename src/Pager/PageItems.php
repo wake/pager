@@ -315,7 +315,7 @@
     }
 
     // Iterator: next
-    public function next () {
+    public function next (): void {
       ++$this->pos;
     }
 
