@@ -320,7 +320,7 @@
     }
 
     // Iterator: valid
-    public function valid () {
+    public function valid (): bool {
       return isset ($this->data['items'][$this->pos]);
     }
 
