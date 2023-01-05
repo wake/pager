@@ -305,7 +305,7 @@
     }
 
     // Iterator: current
-    public function current () {
+    public function current (): mixed {
       return $this->data['items'][$this->pos];
     }
 
